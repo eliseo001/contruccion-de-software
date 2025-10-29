@@ -13,38 +13,39 @@ public class ProductoController {
 
     private final ProductoService productoService;
 
-    public ProductoController(ProductoService productoService) {
+    public ProductoController(ProductoService productoService)
+    {
         this.productoService = productoService;
     }
 
     @GetMapping
-    public List<Producto> getAllProductos() {
-        // Devuelve todos los productos, que ahora incluyen el 'price'
+    public List<Producto> getAllProductos()
+    {
         return productoService.getAllProductos();
     }
 
     @GetMapping("/{id}")
-    public Producto getProductoById(@PathVariable Long id) {
-        // Devuelve el producto individual, que ahora incluye el 'price'
+    public Producto getProductoById(@PathVariable Long id)
+    {
         return productoService.getProductoById(id)
                 .orElseThrow(() -> new RuntimeException("Producto no encontrado con id: " + id));
     }
 
     @PostMapping
-    public Producto createProducto(@RequestBody Producto producto) {
-        // Spring mapea el JSON de entrada completo (incluyendo 'price') al objeto 'producto'
+    public Producto createProducto(@RequestBody Producto producto)
+    {
         return productoService.saveProducto(producto);
     }
 
     @PutMapping("/{id}")
-    public Producto updateProducto(@PathVariable Long id, @RequestBody Producto producto) {
-        // Spring mapea el JSON de entrada completo (incluyendo 'price') al objeto 'producto'
-        // El servicio usa este objeto actualizado para guardar los cambios
+    public Producto updateProducto(@PathVariable Long id, @RequestBody Producto producto)
+    {
         return productoService.updateProducto(id, producto);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteProducto(@PathVariable Long id) {
+    public void deleteProducto(@PathVariable Long id)
+    {
         productoService.deleteProducto(id);
     }
 }

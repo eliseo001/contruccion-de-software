@@ -9,15 +9,16 @@ const ProductForm = ({ onSubmit, onCancel, initialData = { name: '', precio: '' 
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         onSubmit(formData);
-        // No limpiamos el form aquí si es para editar,
-        // el componente padre (Productos.jsx) lo oculta
-        if (!initialData.id) { // Solo limpia si es el form de CREAR
+
+        if (!initialData.id) {
             setFormData({ name: '', precio: '' });
         }
     };

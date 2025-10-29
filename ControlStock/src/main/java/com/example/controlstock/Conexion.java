@@ -18,9 +18,12 @@ public class Conexion {
     private static final String CLAVE = "";
 
     static {
-        try {
+        try
+        {
             Class.forName(CONTROLADOR);
-        } catch (ClassNotFoundException e) {
+        }
+        catch (ClassNotFoundException e)
+        {
             System.out.println("Error al cargar el controlador");
             e.printStackTrace();
         }
@@ -29,11 +32,16 @@ public class Conexion {
     public static Connection conectar() {
         Connection conexion = null;
 
-        try {
+        try
+        {
             conexion = DriverManager.getConnection(URL, USUARIO, CLAVE);
+
             System.out.println("Conexión exitosa");
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             System.out.println("Error en la conexión");
+
             e.printStackTrace();
         }
 
@@ -48,8 +56,10 @@ public class Conexion {
 		        if (cn != null) {
 		            cn.close();
 		        }
-		    } catch (SQLException e) {
-		        e.printStackTrace();
 		    }
+         catch (SQLException e)
+         {
+		        e.printStackTrace();
+         }
 	}
 }

@@ -1,6 +1,5 @@
 package com.example.controlstock.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,29 +22,22 @@ public class Producto {
     @JsonProperty("name")
     private String name;
 
-    // 1. NUEVO CAMPO: precio cambiar a price luego
     @JsonProperty("precio")
     private float precio;
-    // Podrías usar Double en su lugar si prefieres un tipo de objeto: private Double price;
 
-    // Constructor con nombre y precio (Nuevo)
     public Producto(String name, float precio) {
         this.name = name;
         this.precio = precio;
     }
 
-    // Constructor solo con nombre (Mantener si es necesario)
     public Producto(String name) {
         this.name = name;
     }
 
-    // Constructor vacío (Necesario para JPA)
     public Producto() {
 
     }
 
-
-    // Getters y Setters
     public Long getId() {
         return id;
     }
