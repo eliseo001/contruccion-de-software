@@ -14,7 +14,6 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "producto")
-
 public class Producto {
 
     @Id
@@ -24,15 +23,29 @@ public class Producto {
     @JsonProperty("name")
     private String name;
 
-    public Producto(String name) {
+    // 1. NUEVO CAMPO: Precio (usamos float o Double)
+    @JsonProperty("precio")
+    private float precio;
+    // Podrías usar Double en su lugar si prefieres un tipo de objeto: private Double price;
+
+    // Constructor con nombre y precio (Nuevo)
+    public Producto(String name, float precio) {
+        this.name = name;
+        this.precio = precio;
     }
 
+    // Constructor solo con nombre (Mantener si es necesario)
+    public Producto(String name) {
+        this.name = name;
+    }
+
+    // Constructor vacío (Necesario para JPA)
     public Producto() {
 
     }
 
 
-    //geter and setters
+    // Getters y Setters
     public Long getId() {
         return id;
     }
@@ -47,5 +60,13 @@ public class Producto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
     }
 }
