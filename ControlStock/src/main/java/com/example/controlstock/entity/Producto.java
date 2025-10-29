@@ -23,7 +23,7 @@ public class Producto {
     @JsonProperty("name")
     private String name;
 
-    // 1. NUEVO CAMPO: Precio (usamos float o Double)
+    // 1. NUEVO CAMPO: precio cambiar a price luego
     @JsonProperty("precio")
     private float precio;
     // Podrías usar Double en su lugar si prefieres un tipo de objeto: private Double price;
