@@ -1,0 +1,126 @@
+/* Estilo base para todo el contenedor */
+.productos-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Títulos de sección */
+.section-title {
+    color: #444;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Mensaje de carga */
+.loading-message {
+    font-size: 1.2em;
+    text-align: center;
+    color: #555;
+    padding: 20px;
+}
+
+/* Formulario (Crear/Editar) */
+.product-form {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap; /* Para que sea responsive */
+    gap: 10px; /* Espacio entre elementos */
+}
+
+.form-input {
+    flex: 1 1 200px; /* Crece y se achica, base de 200px */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Lista de productos */
+.product-list {
+    list-style: none;
+    padding: 0;
+}
+
+.product-list-item {
+    display: flex; /* Alinea texto y botones */
+    flex-wrap: wrap; /* Para responsive */
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    border-bottom: 1px dotted #eee;
+    padding-bottom: 10px;
+    gap: 10px; /* Espacio entre botones */
+}
+
+.product-list-item span {
+    flex-grow: 1; /* El texto ocupa el espacio disponible */
+    font-size: 1.1em;
+}
+
+/* Detalles del producto */
+.product-detail {
+    border: 1px solid #007bff;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #f0f5ff;
+}
+
+/* --- Botones --- */
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    margin-left: 5px; /* Pequeño margen por si acaso */
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+.btn-info:hover {
+    background-color: #117a8b;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #333;
+}
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+}

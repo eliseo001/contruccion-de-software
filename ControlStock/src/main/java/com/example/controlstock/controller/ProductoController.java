@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/productos")
-@CrossOrigin(origins = "http://localhost:5173") // Ajustá el puerto del front de React
+@CrossOrigin(origins = "http://localhost:5174")
 public class ProductoController {
 
     private final ProductoService productoService;

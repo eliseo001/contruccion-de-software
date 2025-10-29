@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 // App.jsx
 import React from "react";
-import Productos from "./producto/Producto.jsx";
+import Productos from "./producto/Productos.jsx";
 
 function Main() {
     return (
