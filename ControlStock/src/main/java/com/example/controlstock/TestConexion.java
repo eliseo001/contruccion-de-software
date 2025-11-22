@@ -19,7 +19,7 @@ public class TestConexion {
 
             System.out.println("Detalles de la tabla 'producto':");
 
-            System.out.printf("%-5s%-20s%-10s%n", "ID", "Nombre", "Precio");
+            System.out.printf("%-5s%-20s%-10s%-5s%n", "ID", "Nombre", "Precio", "Cantidad");
 
             System.out.println("------------------------------------");
 
@@ -31,6 +31,8 @@ public class TestConexion {
 
                 float precio = rsProductos.getFloat("precio");
 
+                int cantidad = rsProductos.getInt("cantidad");
+
                 Producto producto = new Producto();
 
                 producto.setId(id);
@@ -39,10 +41,12 @@ public class TestConexion {
 
                 producto.setPrecio(precio);
 
-                System.out.printf("%-5d%-20s$%-9.2f%n",
+                producto.setCantidad(cantidad);
+                System.out.printf("%-5d%-20s$%-9.2f-5d%%n",
                         producto.getId(),
                         producto.getName(),
-                        producto.getPrecio()
+                        producto.getPrecio(),
+                        producto.getCantidad()
                 );
             }
         }

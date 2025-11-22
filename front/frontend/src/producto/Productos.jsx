@@ -6,7 +6,7 @@ import ProductForm from "./ProductoForm.jsx";
 import ProductDetail from "./ProductDetail.jsx";
 import './Productos.css';
 
-const formInicialVacio = { name: '', precio: '' };
+const formInicialVacio = { name: '', precio: '', cantidad: '' };
 
 function Productos() {
     const {

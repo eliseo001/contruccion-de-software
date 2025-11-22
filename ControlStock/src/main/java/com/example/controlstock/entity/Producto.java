@@ -25,9 +25,14 @@ public class Producto {
     @JsonProperty("precio")
     private float precio;
 
-    public Producto(String name, float precio) {
+    @JsonProperty("cantidad")
+    private int cantidad;
+
+
+    public Producto(String name, float precio, int cantidad) {
         this.name = name;
         this.precio = precio;
+        this.cantidad = cantidad;
     }
 
     public Producto(String name) {
@@ -60,5 +65,13 @@ public class Producto {
 
     public void setPrecio(float precio) {
         this.precio = precio;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
     }
 }

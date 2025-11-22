@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const ProductForm = ({ onSubmit, onCancel, initialData = { name: '', precio: '' } }) => {
+const ProductForm = ({ onSubmit, onCancel, initialData = { name: '', precio: '', cantidad: '' } }) => {
     const [formData, setFormData] = useState(initialData);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const ProductForm = ({ onSubmit, onCancel, initialData = { name: '', precio: '' 
         onSubmit(formData);
 
         if (!initialData.id) {
-            setFormData({ name: '', precio: '' });
+            setFormData({ name: '', precio: '', cantida: '' });
         }
     };
 
@@ -40,6 +40,16 @@ const ProductForm = ({ onSubmit, onCancel, initialData = { name: '', precio: '' 
                 step="0.01"
                 placeholder="Precio"
                 value={formData.precio}
+                onChange={handleChange}
+                required
+                className="form-input"
+            />
+            <input
+                type="number"
+                name="cantidad"
+                step="0.01"
+                placeholder="Cantidad"
+                value={formData.cantidad}
                 onChange={handleChange}
                 required
                 className="form-input"
